@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.github.guangbin79.lifeisimportant">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+
+    <application>
+        <service
+            android:name="com.github.guangbin79.lifeisimportant.ProlongLifeService"
+            android:exported="false"
+            android:process=":LifeIsImportant"
+            android:priority="1000"
+            android:foregroundServiceType="connectedDevice|dataSync|location|mediaPlayback">
+            <intent-filter>
+                <action android:name="com.github.guangbin79.lifeisimportant.hello" />
+                <action android:name="com.github.guangbin79.lifeisimportant.ILifeCountInterface" />
+            </intent-filter>
+        </service>
+    </application>
+</manifest>

@@ -1,0 +1,3 @@
+include ':LifeIsImportant'
+include ':app'
+rootProject.name = "LifeIsImportant"
